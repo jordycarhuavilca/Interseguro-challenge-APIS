@@ -1,0 +1,4 @@
+export enum envConfig {
+  SERVER_PORT = "SERVER_PORT",
+  OPERATIONS_BASE_URL = "OPERATIONS_BASE_URL",
+}

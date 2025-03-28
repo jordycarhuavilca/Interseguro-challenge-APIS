@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: API-QR
+    networks:
+      - app_network
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - OPERATIONS_BASE_URL=${OPERATIONS_BASE_URL}
+    ports:
+      - "3000:3000"
+
+networks:
+  app_network:
+    driver: bridge
