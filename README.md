@@ -18,22 +18,6 @@ El proyecto sigue una arquitectura modular, dividida en las siguientes capas pri
 *   **Capa de Excepciones (Exceptions):** Define las excepciones personalizadas que se utilizan para el manejo de errores.
 *   **Capa de Configuración (Env):** Permite leer las variables de entorno, necesarios para la ejecucion del programa.
 
-### Diagrama de Arquitecturamermaid
-graph LR
-    A[Cliente] --> B(Rutas);
-    B --> C{Controlador};
-    C --> D(Servicio);
-    D --> E{Factorización QR};
-    D --> F{QrProvider};
-    F --> G((API Operations));
-    G --> F;
-    E --> D;
-    D --> C;
-    C --> B;
-    B --> A;
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#f9f,stroke:#333,stroke-width:2px
-
 ## 4. Componentes del Proyecto
 
 ### 4.1. Archivos de Configuración
@@ -459,32 +443,6 @@ El `Dockerfile` se utiliza para construir la imagen Docker de la aplicación.  S
       "success": true
     }
     ```
-
-### Diagrama de Flujomermaid
-sequenceDiagram
-    participant Cliente
-    participant Router
-    participant QrController
-    participant QrService
-    participant QrProvider
-    participant API_Externa
-
-    Cliente->>Router: POST /api/qr/factorization {matrix: [...]}
-    Router->>QrController: Dirige la petición
-    QrController->>QrService: Invoca factorization(matrix)
-    QrService->>QrService: isValidMatrix(matrix)
-    alt Matriz inválida
-        QrService-->>QrController: Lanza HttpException
-        QrController-->>Cliente:  Respuesta con error
-    else Matriz válida
-        QrService->>QrService: qr(matrix) // Factorización QR
-        QrService->>QrProvider: getQrSpecifications({Q, R})
-        QrProvider->>API_Externa: GET /specifications {Q, R}
-        API_Externa-->>QrProvider: Especificaciones
-        QrProvider-->>QrService: Especificaciones
-        QrService-->>QrController: {qr: {Q, R}, specifications}
-        QrController-->>Cliente: Respuesta con datos
-    end
 
 ## 6. Manejo de Errores
 
