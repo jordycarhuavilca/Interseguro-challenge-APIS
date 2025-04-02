@@ -23,7 +23,6 @@ services:
       - /SPECIFICATIONS/.env
     ports:
       - "3001"
-
 networks:
   app_network:
     driver: bridge
