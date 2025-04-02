@@ -8,9 +8,6 @@ services:
     container_name: API-QR
     networks:
       - app_network
-    # environment:
-    #   - SERVER_PORT=${SERVER_PORT}
-    #   - OPERATIONS_BASE_URL=${OPERATIONS_BASE_URL}
     env_file:
       - /QR/.env
     ports:
@@ -24,8 +21,6 @@ services:
       - app_network
     env_file:
       - /SPECIFICATIONS/.env
-    # environment:
-    #   - SERVER_PORT=${SERVER_PORT}
     ports:
       - "3001"
 
