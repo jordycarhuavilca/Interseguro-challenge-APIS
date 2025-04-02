@@ -1,5 +1,5 @@
 import { HttpStatus } from "../common/constant/httpResponses";
-import { HttpException } from "../common/exception/HttpExeption";
+import { HttpException } from "../common/exception/httpException";
 import { isValidMatrix } from "../common/utils/validate";
 import { GetMatriz } from "./dto/matriz";
 

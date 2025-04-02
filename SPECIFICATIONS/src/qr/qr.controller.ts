@@ -22,7 +22,7 @@ class QrController {
         success: true,
       };
 
-      return res.status(HttpStatus.OK.CODE).json(responseDefault.value);
+      res.status(HttpStatus.OK.CODE).json(responseDefault.value);
     } catch (error) {
       responseDefault.value = {
         data: null,
@@ -31,7 +31,7 @@ class QrController {
         success: false,
       };
 
-      return res.status(HttpStatus.BAD_REQUEST.CODE).json({
+      res.status(HttpStatus.BAD_REQUEST.CODE).json({
         error: "Error processing QR factorization",
       });
     }

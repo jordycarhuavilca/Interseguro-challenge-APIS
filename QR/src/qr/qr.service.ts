@@ -15,7 +15,10 @@ export class QrService {
     }
 
     const { Q, R } = qr(matrix);
-    const specifications = await QrProvider.getQrSpecifications({ Q, R } as any);
+    const specifications = await QrProvider.getQrSpecifications({
+      Q,
+      R,
+    } as any);
 
     const result = {
       qr: { Q, R },

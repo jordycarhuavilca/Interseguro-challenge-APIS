@@ -1,4 +1,4 @@
-export function isValidMatrix(matrix) {
+export function isValidMatrix(matrix: number[][]) {
   return (
     Array.isArray(matrix) &&
     matrix.length > 0 &&

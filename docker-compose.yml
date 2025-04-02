@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  qr:
+    build:
+      context: /QR/
+      dockerfile: Dockerfile
+    container_name: API-QR
+    networks:
+      - app_network
+    # environment:
+    #   - SERVER_PORT=${SERVER_PORT}
+    #   - OPERATIONS_BASE_URL=${OPERATIONS_BASE_URL}
+    env_file:
+      - /QR/.env
+    ports:
+      - "3000:3000"
+  specification:
+    build:
+      context: /SPECIFICATIONS/
+      dockerfile: Dockerfile
+    container_name: API-SPECIFICATION
+    networks:
+      - app_network
+    env_file:
+      - /SPECIFICATIONS/.env
+    # environment:
+    #   - SERVER_PORT=${SERVER_PORT}
+    ports:
+      - "3001"
+
+networks:
+  app_network:
+    driver: bridge

@@ -2,8 +2,8 @@ import express from "express";
 import router from "./routes";
 import cors from "cors";
 import { Request, Response, NextFunction } from "express";
-import { HttpException } from "./common/exception";
 import { HttpStatus } from "./common/constant/httpResponses";
+import { HttpException } from "./common/exception";
 
 const app = express();
 app.use(cors());

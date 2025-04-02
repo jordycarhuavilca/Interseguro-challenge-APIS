@@ -1,1 +1,1 @@
-export * from './httpExeption'
+export * from './httpException'

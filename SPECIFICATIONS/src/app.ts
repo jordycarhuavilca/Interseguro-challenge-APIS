@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import router from "./routes";
 import cors from "cors";
 import { Request, Response, NextFunction } from "express";
-import { HttpException } from "./common/exception/HttpExeption";
 import { HttpStatus } from "./common/constant/httpResponses";
+import { HttpException } from "./common/exception/httpException";
 
 dotenv.config();
 const app = express();
