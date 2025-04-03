@@ -448,13 +448,6 @@ El `Dockerfile` se utiliza para construir la imagen Docker de la aplicación.  S
 
 La API utiliza excepciones personalizadas (`HttpException`) para manejar errores de manera consistente.  Cuando ocurre un error, se lanza una excepción que es capturada por el middleware de manejo de errores global.  Este middleware formatea la respuesta de error con un código de estado HTTP apropiado y un mensaje descriptivo.
 
-## 7. Consideraciones Adicionales
-
-*   **Seguridad:** Actualmente, la API no implementa mecanismos de autenticación o autorización. Se recomienda implementar medidas de seguridad para proteger los endpoints y los datos.
-*   **Logging:** Se sugiere implementar un sistema de logging robusto para facilitar la depuración y el monitoreo de la aplicación.
-*   **Pruebas:**  Es crucial implementar pruebas unitarias e integración para asegurar la calidad y la estabilidad de la API.
-*   **Escalabilidad:** La arquitectura actual permite una escalabilidad horizontal sencilla utilizando un balanceador de carga y múltiples instancias del contenedor Docker.
-
 ## 8. Conclusión
 
 Este documento proporciona una visión general de la arquitectura y la funcionalidad de la API-QR. Se espera que esta información sea útil para que la consultora externa realice una evaluación completa del proyecto y proporcione recomendaciones para su mejora.
